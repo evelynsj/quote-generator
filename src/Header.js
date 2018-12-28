@@ -1,8 +1,11 @@
 import React from 'react'
+import './Header.css'
 
 function Header() {
     return (
-        <h1>Header Section</h1>
+        <header>
+            <h1>Quote Generator</h1>
+        </header>
     );
 }
 

@@ -1,8 +1,9 @@
 import React from 'react'
+import './Footer.css'
 
 function Footer() {
     return (
-        <h1>Footer Section</h1>
+        <footer>&copy; Evelyn Sjafii • Made with <span role="img" aria-label="Rose">&#127801;</span> and <span role="img" aria-label="Coffee">&#9749;</span></footer>
     );
 }
 
