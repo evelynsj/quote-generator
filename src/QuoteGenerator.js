@@ -9,38 +9,25 @@ class QuoteGenerator extends React.Component {
     constructor() {
         super();
         this.state = {
-            randomQuote: "Do not pity the dead, Harry. Pity the living, and, above all those who live without love.",
-            randomAuthor: "JK Rowling",
-            quoteArray: [
-                {
-                    quote: "It is impossible to live without failing at something, unless you live so cautiously that you might as well not have lived at all - in which case, you fail by default",
-                    author: "JK Rowling"
-                },
-                {
-                    quote: "It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends.",
-                    author: "JK Rowling"
-                },
-                {
-                    quote: "Numbing the pain for a while will make it worse when you finally feel it.",
-                    author: "JK Rowling"
-                },
-                {
-                    quote: "It is the unknown we fear when we look upon death and darkness, nothing more.",
-                    author: "JK Rowling"
-                },
-                {
-                    quote: "Things we lose have a way of coming back to us in the end, if not always in the way we expect",
-                    author: "JK Rowling"
-                }
-            ]  
+            randomQuote: "",
+            randomAuthor: "",
+            isLoading: true,
+            quoteArray: []
         };
         this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick(event) {
+    componentDidMount() {
+        fetch("https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json").then(response => response.json()).then(data => {
+            const {quotes} = data;
+            this.setState({
+                isLoading: false,
+                quoteArray: quotes});
+            this.getRandomQuote();
+        });
+    }
 
-        event.preventDefault();
-
+    getRandomQuote() {
         const rand = Math.floor(Math.random() * this.state.quoteArray.length);
         const quote = this.state.quoteArray[rand].quote;
         const author = this.state.quoteArray[rand].author;
@@ -50,8 +37,14 @@ class QuoteGenerator extends React.Component {
         });
     }
 
+    handleClick(event) {
+        event.preventDefault();
+        this.getRandomQuote();
+    }
+
     render() {
         return (
+            (this.state.isLoading) ? null : 
             <div className="quote-generator">
                 <div className="quote-wrapper">
                     <p className="quote-text">{this.state.randomQuote}</p>
