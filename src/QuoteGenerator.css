@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,500,600');
+
 .quote-generator {
-    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,34 +11,44 @@
 }
 
 .quote-wrapper {
-    border: 8px solid black;
+    border: 7px solid #D8DFF9;
+    box-shadow: 3px 3px #888888;
+    border-radius: 20px;
     width: 80%;
     margin-top: 20px;
     margin-bottom: 20px;
+    background-color: #82C8D2;
 }
 
 .quote-text {
-    /* border: 1px solid black; */
-    margin-left: 15px;
-    margin-right: 15px;
+    width: 90%;
+    margin: 15px auto;
     text-align: center;
     font-size: 20px;
+    font-family: 'Work Sans', sans-serif;
+    text-shadow: 0px 0.5px 0;
 }
 
 .quote-author {
-    /* border: 1px solid black; */
     text-align: right;
+    margin-top: -10px;
     margin-left: 15px;
     margin-right: 15px;
     font-style: italic;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 15px;
 }
 
 .generate-btn {
-    border: 2px solid black;
+    border: 3px solid #D8DFF9;
+    background-color: #82C8D2;
+    color:white;
+    -webkit-text-stroke: 0.5px #D8DFF9;
+    font-size: 15px;
+    font-family: 'Work Sans', sans-serif;
 }
 
 .btn-share {
-    /* border: 1px solid black; */
     width: 100%;
     display: flex;
     flex-direction: row;

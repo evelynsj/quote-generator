@@ -1,5 +1,4 @@
 .icons {
-    /* border: 1px solid black; */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -7,7 +6,7 @@
 }
 
 a {
-    color: black;
+    color: #D8DFF9;
     text-decoration: none;
     padding: 5px;
 }

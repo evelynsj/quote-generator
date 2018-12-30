@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Staatliches');
+
 header {
-    /* border: 1px solid black; */
     text-align: center;
-    font-size: 23px;
+    font-size: 28px;
+    font-family: 'Staatliches', cursive;
+    letter-spacing: 3px;
+    color: #AF90A9;
+    -webkit-text-stroke: 1px #944654;
+    text-shadow: 2px 2px 0px #944654
+    
 }
