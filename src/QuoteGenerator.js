@@ -52,7 +52,7 @@ class QuoteGenerator extends React.Component {
                 </div>
                 <div className="btn-share">
                     <button className="generate-btn" onClick={this.handleClick}>Generate!</button>
-                    <Share />
+                    <Share quote={this.state.randomQuote} author={this.state.randomAuthor}/>
                 </div>
                 
             </div>
